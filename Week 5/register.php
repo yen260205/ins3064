@@ -3,7 +3,7 @@ include("db_connect.php");
 
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
-    $password = md5($_POST['password']); // for consistency with login.php (use password_hash() in real projects)
+    $password = md5($_POST['password']); 
 
     // Check if the username already exists
     $check_user = "SELECT * FROM users WHERE username='$username'";

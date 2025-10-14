@@ -1,13 +1,15 @@
 <?php
 session_start();
-header("location:login.php");
 /* connect to database check user*/
-$con=mysqli_connect('localhost','root');
-mysqli_select_db($con,LoginReg);
+$con=mysqli_connect('localhost','root', '', 'loginReg', 3307);
+mysqli_select_db($con, 'LoginReg');
 
 /* create variables to store data */
 $name =$_POST['user'];
 $pass =$_POST['password'];
+$studentid = $_POST['studentid'];
+$dob = $_POST['dob'];
+$country = $_POST['country'];
 
 /* select data from DB */
 $s="select * from userReg where name='$name'";
